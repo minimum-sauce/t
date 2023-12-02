@@ -1,0 +1,37 @@
+#!/usr/bin/python3 env
+
+import sys
+
+base_commands = ["help", "build" "run", "clean"]
+
+
+def help():
+    print("""
+          wellcome to te help menu!
+          available commands are:
+
+          getting help:
+          'run help'
+
+          building the program and tests:
+          'run build:release'       (without debugging)
+          'run build:debug'         (with debugging and sanatizer)
+          'run build:clean:debug'   (rebuild build directory and code)
+          'run build:clean:release' (rebuild build directory and code)
+
+          run the program:
+          'run run:tests'           (run all tests)
+          'run run:coverage'        (build/run tests with code coverage and generate lcov files)
+          'run run:app:<app>'
+
+          
+          """)
+
+def parse():
+    if (len(sys.argv) < 2): 
+        print("Not enough arguments.\nUsage: run (Action) [more actions], 'run help' for available actions\n")
+        exit(1)
+    actions = []
+    for action in sys.argv[1:]:
+        
+        pass
